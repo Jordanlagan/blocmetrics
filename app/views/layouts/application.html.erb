@@ -8,6 +8,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <ul class="nav nav-tabs">
+        <% if user_signed_in? %>
+          <li> <%= link_to "Home", root_path %> </li>
+          <li class="pull-right"><%= link_to "Edit profile", edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li class="pull-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <li class="pull-right user-info">Signed in as: <strong> <%= current_user.email %> </strong></li>
+
+        <% else %>
+          <li> <%= link_to "Home", root_path %> </li>
+          <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
+          <li class="pull-right"><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
+        <% end %>
+    </ul>
+ </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
   <body>
     <%= yield %>
   </body>
