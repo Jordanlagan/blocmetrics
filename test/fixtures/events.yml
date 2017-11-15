@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registered_application: one
+  name: MyString
+
+two:
+  registered_application: two
+  name: MyString
