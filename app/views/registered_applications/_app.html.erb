@@ -1,0 +1,6 @@
+<h4>
+  <%= link_to app.name, registered_application_path(app) %>
+</h4>
+<small>
+  Added <%= time_ago_in_words(app.created_at) %> ago.
+</small>

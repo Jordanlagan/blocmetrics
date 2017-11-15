@@ -1,0 +1,9 @@
+<%= form_for app do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Enter Name of Website or App" %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url, placeholder: "Enter URL where tracking script is installed." %>
+
+  <%= f.submit "Save" %>
+<% end %>
