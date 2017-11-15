@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Blocmetrics</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-     <ul class="nav nav-tabs">
-        <% if user_signed_in? %>
+  <header class="main-nav">
+    <nav>
+      <% if user_signed_in? %>
+        <ul>
           <li> <%= link_to "Home", root_path %> </li>
-          <li class="pull-right"><%= link_to "Edit profile", edit_user_registration_path, :class => 'navbar-link' %></li>
-          <li class="pull-right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-          <li class="pull-right user-info">Signed in as: <strong> <%= current_user.email %> </strong></li>
+        </ul>
 
-        <% else %>
+        <ul>
+          <li>Signed in as: <strong> <%= current_user.email %> </strong></li>
+          <li><%= link_to "Edit profile", edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        </ul>
+
+      <% else %>
+        <ul>
           <li> <%= link_to "Home", root_path %> </li>
-          <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
-          <li class="pull-right"><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
-        <% end %>
-    </ul>
- </nav>
+        </ul>
+
+        <ul>
+          <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %></li>
+        </ul>
+      <% end %>
+   </nav>
+ </header>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-
-  <body>
-    <%= yield %>
-  </body>
+  <div class="wrapper">
+    <body>
+      <%= yield %>
+    </body>
+  </div>
 </html>
