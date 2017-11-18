@@ -2,9 +2,9 @@
 <h4><%= @app.url %></h4>
 <h3>Events</h3>
 <ul>
-  <li>Traffic: <%= @visits.count %></li>
-  <li>Bounces: <%= @bounces.count %></li>
-  <li>Links Clicked: <%= @link_clicks.count %></li>
+  <% @events.each do |event| %>
+   <li><%= event.name %></li>
+  <% end %>
 </ul>
 
 <%= link_to "Edit", edit_registered_application_path(@app) %>

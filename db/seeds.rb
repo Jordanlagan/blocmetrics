@@ -16,7 +16,7 @@ puts "Apps seeded"
 
 events = ["visit", "leave", "click-link"]
 
-500.times do
+50.times do
   Event.create!( registered_application: apps.sample, name: events.sample )
 end
 

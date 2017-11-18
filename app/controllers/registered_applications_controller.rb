@@ -25,9 +25,6 @@ class RegisteredApplicationsController < ApplicationController
     @app = @user.registered_applications.find(params[:id])
     @events = @app.events
 
-    @visits = @events.where(name: "visit")
-    @bounces = @events.where(name: "leave")
-    @link_clicks = @events.where(name: "click-link")
   end
 
   def edit
