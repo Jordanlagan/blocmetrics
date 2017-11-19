@@ -2,7 +2,6 @@ class API::EventsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-=begin
   before_action :set_access_control_headers
 
   def set_access_control_headers
@@ -14,7 +13,6 @@ class API::EventsController < ApplicationController
     headers['Access-Control-Allow-Headers'] = 'Content-Type'
 
   end
-=end
 
   def create
     @registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
