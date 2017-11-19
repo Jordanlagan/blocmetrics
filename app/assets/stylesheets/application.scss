@@ -19,3 +19,12 @@
 .wrapper {
   @include wrapper();
 }
+.bt {
+  @include button();
+}
+.row {
+  @include row();
+}
+.half {
+  @include column('half');
+}

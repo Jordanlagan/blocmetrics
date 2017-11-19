@@ -1,6 +1,6 @@
 <h1>Index</h1>
 
-<%= link_to "New Connection", new_registered_application_path %>
+<%= link_to "New Connection", new_registered_application_path, class: 'bt' %>
 
 <% @apps.each do |app| %>
   <%= render partial: 'app', locals: { app: app } %>

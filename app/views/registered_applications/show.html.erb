@@ -1,12 +1,18 @@
 <h3><%= @app.name %></h4>
 <h4><%= @app.url %></h4>
-<h3>Events</h3>
-<ul>
-  <% @events.each do |event| %>
-   <li><%= event.name %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Edit", edit_registered_application_path(@app) %>
 <br>
-<%= link_to "Delete", @app, method: :delete, data: {confirm: 'Are you sure you want to delete this connection?'} %>
+<%= link_to "Edit", edit_registered_application_path(@app), class: 'bt' %>
+&nbsp;
+<%= link_to "Delete", @app, class: 'bt', method: :delete, data: {confirm: 'Are you sure you want to delete this connection?'} %>
+<h3>Events</h3>
+<br>
+<section class="row">
+  <div class="half">
+    <h5>Overall</h5>
+   <%= pie_chart @app.events.group(:name).count %>
+ </div>
+ <div class="half">
+   <h5>Day by day</h5>
+   <%= line_chart @app.events.group_by_day(:created_at).count %>
+ </div>
+</section>
