@@ -12,3 +12,26 @@ blocmetrics.report = function(eventName){
 };
 ```
 *Note: This assumes you are running Bloc Metrics locally at http://localhost:3000 which is where rails servers run by default. See below for steps for setting up Bloc Metrics to run locally.*
+
+### Features
+ - Users can create accounts, sign in and sign out.
+ - Users can create Registered Applications which will hold the URL where events will be tracked.
+ - By installing Bloc Metrics on an application or website, users can track any number of metrics which will dynamically update on the Registered Application show page using pie charts and line graphs.
+
+### Setup and Configuration
+ - Languages and Frameworks: Ruby on Rails and Bootstrap
+ - Ruby version 2.4.1
+ - Databases: PostgreSQL
+
+### Development Tools and Gems include:
+ - Devise
+ - Faker
+ - Chartkick
+ - Groupdate
+
+### To run Blocmetrics locally:
+ - Clone the repository `git clone https://github.com/jordanlagan/blocmetrics.git`
+ - Run `bundle install`
+ - Create and migrate the database with `rails db:create` and `rails db:migrate`
+ - Run the server `rails s`
+ - Navigate to `localhost:3000` in your browser
