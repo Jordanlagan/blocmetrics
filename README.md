@@ -1,6 +1,9 @@
 # Bloc Metrics
 
-Welcome to Bloc Metrics. This is an analytics application that you can install on your web application or website that gives you ultimate flexibility to define which metrics to track. Installation is a 1 step process, and it involves merely inserting this JavaScript code to be run somewhere during initialization. (In Rails a good place to put this code would be app/assets/javascripts/application.js)
+Welcome to Bloc Metrics. This is an analytics application that you can install on your web application or website that gives you ultimate flexibility to define which metrics to track.
+![bloc metrics screenshot](/bloc-metrics.png?raw=true "Screenshot")
+
+Installation is a 1 step process, and it involves merely inserting this JavaScript code to be run somewhere during initialization. (In Rails a good place to put this code would be app/assets/javascripts/application.js)
 ```javascript
 var blocmetrics = {};
 blocmetrics.report = function(eventName){
@@ -37,6 +40,7 @@ window.onload = function() {
  - Faker
  - Chartkick
  - Groupdate
+ - Kickstart CSS library
 
 ### To run Blocmetrics locally:
  - Clone the repository `git clone https://github.com/jordanlagan/blocmetrics.git`
