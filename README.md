@@ -13,6 +13,15 @@ blocmetrics.report = function(eventName){
 ```
 *Note: This assumes you are running Bloc Metrics locally at http://localhost:3000 which is where rails servers run by default. See below for steps for setting up Bloc Metrics to run locally.*
 
+Next, to install Bloc Metrics on your website or web application to track events, simply run the javascript snippet `blocmetrics.report('name_of_event')` 
+
+For example:
+```javascript
+window.onload = function() {
+  blocmetrics.report('Page Loaded');
+};
+```
+
 ### Features
  - Users can create accounts, sign in and sign out.
  - Users can create Registered Applications which will hold the URL where events will be tracked.
